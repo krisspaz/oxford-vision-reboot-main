@@ -18,171 +18,151 @@ const Contact = () => {
       icon: MapPin,
       title: "Ubicación",
       content: (
-  <div className="flex flex-col items-center text-center">
-    <span>Cobán, Alta Verapaz, Guatemala</span>
-    <div className="mt-1">
-      <a
-        href="https://ul.waze.com/ul?place=ChIJ8xFrWDdBioURja2lwBX1c4U&ll=15.47370700%2C-90.35879200&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-500 hover:underline"
-      >
-        Waze
-      </a>{" "}
-      |{" "}
-      <a
-        href="https://www.google.com/maps?q=15.473707,-90.358792"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-500 hover:underline"
-      >
-        Google Maps
-      </a>
-    </div>
-  </div>
-),
-      action: null,
+        <>
+          Cobán, Alta Verapaz, Guatemala
+          <div className="mt-2">
+            <a
+              href="https://ul.waze.com/ul?place=ChIJ8xFrWDdBioURja2lwBX1c4U&ll=15.47370700%2C-90.35879200&navigate=yes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[rgb(59,130,246)] hover:underline"
+            >
+              Waze
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://www.google.com/maps?q=15.473707,-90.358792"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[rgb(59,130,246)] hover:underline"
+            >
+              Google Maps
+            </a>
+          </div>
+        </>
+      ),
     },
     {
       icon: Phone,
       title: "Teléfono",
       content: "+502 7951-3898",
-      action: () => window.open("tel:+50279513898", "_blank"),
     },
     {
       icon: Mail,
-      title: "Correo",
+      title: "Correo Electrónico",
       content: "info@colegiooxford.edu.gt",
-      action: () => window.open("mailto:info@colegiooxford.edu.gt", "_blank"),
     },
   ];
 
   return (
     <section
       id="contacto"
-      className="section-padding bg-card relative overflow-hidden"
       ref={ref}
+      className="section-padding bg-white relative overflow-hidden"
     >
-      {/* Fondo decorativo */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-accent-vibrant/5 rounded-full blur-3xl animate-pulse"></div>
-      <div
-        className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-pulse"
-        style={{ animationDelay: "1s" }}
-      ></div>
-
       <div className="container-custom relative z-10">
-        <div className="max-w-5xl mx-auto">
-          {/* Encabezado */}
-          <div
-            className={`text-center mb-12 ${
-              isVisible ? "animate-fade-in-up" : "opacity-0"
-            }`}
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
-              ¿Listo para{" "}
-              <span className="gradient-text bg-gradient-accent">
-                Comenzar?
-              </span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Contáctanos para conocer más sobre nuestra oferta educativa y
-              proceso de admisión.
-            </p>
-          </div>
+        {/* Encabezado */}
+        <div
+          className={`text-center mb-12 ${
+            isVisible ? "animate-fade-in-up" : "opacity-0"
+          }`}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[rgb(230,0,126)]">
+            ¿Listo para Comenzar?
+          </h2>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+            Contáctanos para conocer más sobre nuestra oferta educativa y el
+            proceso de admisión.
+          </p>
+        </div>
 
-          {/* Tarjetas de contacto */}
-          <div
-            className={`grid md:grid-cols-3 gap-6 mb-12 ${
-              isVisible ? "animate-fade-in" : "opacity-0"
-            }`}
-            style={{ animationDelay: "0.1s" }}
-          >
-            {contactInfo.map((info, index) => (
-              <Card
-                key={index}
-                className={`border-border hover:shadow-glow hover:border-accent-vibrant/30 transition-all duration-300 group ${
-                  info.action ? "cursor-pointer hover:-translate-y-2" : ""
-                }`}
-                onClick={info.action || undefined}
-              >
-                <CardContent className="pt-6 text-center flex flex-col items-center justify-center">
-                  <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent-vibrant/20 group-hover:scale-110 transition-all duration-300">
-                    <info.icon className="w-6 h-6 text-accent-vibrant group-hover:rotate-12 transition-transform" />
-                  </div>
-                  <h3 className="font-semibold text-primary mb-2 group-hover:text-accent-vibrant transition-colors">
-                    {info.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground text-center">
-                    {info.content}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Botones de acción */}
-          <div
-            className={`flex flex-col sm:flex-row items-center justify-center gap-4 ${
-              isVisible ? "animate-fade-in-up" : "opacity-0"
-            }`}
-            style={{ animationDelay: "0.2s" }}
-          >
-            <Button
-              size="lg"
-              variant="accent"
-              onClick={() => window.open("https://wa.me/50255748357", "_blank")}
-              className="w-full sm:w-auto group"
+        {/* Tarjetas de contacto */}
+        <div
+          className={`grid md:grid-cols-3 gap-6 mb-12 ${
+            isVisible ? "animate-fade-in" : "opacity-0"
+          }`}
+          style={{ animationDelay: "0.1s" }}
+        >
+          {contactInfo.map((info, i) => (
+            <Card
+              key={i}
+              className="border border-gray-200 bg-white shadow-sm hover:shadow-md hover:border-[rgb(230,0,126)]/40 rounded-2xl transition-all duration-300"
             >
-              <MessageCircle
-                className="mr-2 group-hover:rotate-12 transition-transform"
-                size={20}
-              />
-              WhatsApp
-            </Button>
+              <CardContent className="pt-6 text-center flex flex-col items-center justify-center">
+                <div className="w-14 h-14 rounded-full bg-[rgb(59,130,246)]/10 flex items-center justify-center mb-4">
+                  <info.icon className="w-6 h-6 text-[rgb(59,130,246)]" />
+                </div>
+                <h3 className="font-semibold text-[rgb(0,200,150)] mb-2">
+                  {info.title}
+                </h3>
+                <p className="text-sm text-gray-600 text-center leading-relaxed">
+                  {info.content}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => window.open("https://www.facebook.com/profile.php?id=61562861189831", "_blank")}
-              className="w-full sm:w-auto group"
-            >
-              <Facebook
-                className="mr-2 group-hover:scale-110 transition-transform"
-                size={20}
-              />
-              Facebook
-            </Button>
-
-            <Button
-              size="lg"
-              variant="default"
-              onClick={() =>
-                window.open("https://artesgraficasverapaz.com/admin/login", "_blank")
-              }
-              className="w-full sm:w-auto group"
-            >
-              <ExternalLink
-                className="mr-2 group-hover:translate-x-1 transition-transform"
-                size={20}
-              />
-              Plataforma
-            </Button>
-          </div>
-
-          {/* Horario */}
-          <div
-            className={`mt-12 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-accent/5 to-gold/5 border border-accent/20 hover:shadow-medium transition-all duration-300 ${
-              isVisible ? "animate-scale-in" : "opacity-0"
-            }`}
-            style={{ animationDelay: "0.3s" }}
+        {/* Botones */}
+        <div
+          className={`flex flex-col sm:flex-row items-center justify-center gap-4 ${
+            isVisible ? "animate-fade-in-up" : "opacity-0"
+          }`}
+          style={{ animationDelay: "0.2s" }}
+        >
+          {/* WhatsApp */}
+          <Button
+            size="lg"
+            onClick={() => window.open("https://wa.me/50255748357", "_blank")}
+            className="w-full sm:w-auto bg-[rgb(0,200,150)] hover:bg-[rgb(0,180,130)] text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300"
           >
-            <h3 className="text-xl font-semibold text-primary mb-3 text-center">
-              Horario de Atención
-            </h3>
-            <p className="text-center text-muted-foreground">
-              Lunes a Viernes: 7:00 AM - 2:00 PM
-            </p>
-          </div>
+            <MessageCircle className="mr-2" size={20} />
+            WhatsApp
+          </Button>
+
+          {/* Facebook */}
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={() =>
+              window.open(
+                "https://www.facebook.com/profile.php?id=61562861189831",
+                "_blank"
+              )
+            }
+            className="w-full sm:w-auto border-[rgb(59,130,246)] text-[rgb(59,130,246)] hover:bg-[rgb(59,130,246)] hover:text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            <Facebook className="mr-2" size={20} />
+            Facebook
+          </Button>
+
+          {/* Plataforma */}
+          <Button
+            size="lg"
+            onClick={() =>
+              window.open(
+                "https://artesgraficasverapaz.com/admin/login",
+                "_blank"
+              )
+            }
+            className="w-full sm:w-auto bg-[rgb(255,150,0)] hover:bg-[rgb(230,120,0)] text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            <ExternalLink className="mr-2" size={20} />
+            Plataforma
+          </Button>
+        </div>
+
+        {/* Horario */}
+        <div
+          className={`mt-14 p-6 md:p-8 rounded-2xl bg-white border border-[rgb(255,150,0)] shadow-sm hover:shadow-md transition-all duration-300 text-center max-w-xl mx-auto ${
+            isVisible ? "animate-scale-in" : "opacity-0"
+          }`}
+          style={{ animationDelay: "0.3s" }}
+        >
+          <h3 className="text-xl font-semibold text-[rgb(59,130,246)] mb-3">
+            Horario de Atención
+          </h3>
+          <p className="text-gray-700">Lunes a Viernes: 7:00 AM - 2:00 PM</p>
         </div>
       </div>
     </section>
