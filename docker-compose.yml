@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  frontend:
+    image: oxford-vision
+    container_name: oxford-vision
+    ports:
+      - "8080:80"
+    restart: always
