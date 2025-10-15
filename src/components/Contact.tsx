@@ -141,7 +141,7 @@ const Contact = () => {
             size="lg"
             onClick={() =>
               window.open(
-                "https://artesgraficasverapaz.com/admin/login",
+                "https://colegiooxford.edu.gt/admin/login",
                 "_blank"
               )
             }
