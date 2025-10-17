@@ -5,7 +5,9 @@ const ScrollProgress = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const totalHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
       const progress = (window.scrollY / totalHeight) * 100;
       setScrollProgress(progress);
     };
@@ -15,10 +17,16 @@ const ScrollProgress = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-1 bg-muted/30 z-50">
+    <div className="fixed top-0 left-0 right-0 h-[4px] bg-gray-200/40 z-[9999]">
       <div
-        className="h-full bg-gradient-accent transition-all duration-200"
-        style={{ width: `${scrollProgress}%` }}
+        className="h-full transition-all duration-200 ease-out"
+        style={{
+          width: `${scrollProgress}%`,
+          background:
+            "linear-gradient(90deg, rgb(230,0,126) 0%, rgb(0,200,150) 100%)",
+          boxShadow:
+            "0 0 6px rgba(230,0,126,0.4), 0 0 10px rgba(0,200,150,0.4)",
+        }}
       />
     </div>
   );
