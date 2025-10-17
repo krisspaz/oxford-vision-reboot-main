@@ -3,5 +3,5 @@ services:
     build: .
     container_name: oxford-vision
     ports:
-      - "7080:80"
+      - "7080:3000"
     restart: unless-stopped
