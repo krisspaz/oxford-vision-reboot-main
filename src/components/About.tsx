@@ -1,6 +1,6 @@
 import { GraduationCap, Globe, Users, Award } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import aboutImage from "@/assets/BBL_6819.jpg"; // 👈 NUEVA FOTO (niñas sonriendo)
+import aboutImage from "@/assets/BBL_7653.jpg"; // 👦 Niño con folder
 
 const About = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -40,7 +40,7 @@ const About = () => {
     >
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Imagen */}
+          {/* 📸 Imagen principal */}
           <div
             className={`relative ${
               isVisible ? "animate-slide-in-left" : "opacity-0"
@@ -49,19 +49,21 @@ const About = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-glow transition-all duration-700 group">
               <img
                 src={aboutImage}
-                alt="Estudiantes felices en Oxford Bilingual School"
+                alt="Estudiante de Oxford Bilingual School"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-              <h3 className="absolute bottom-6 left-6 text-white text-3xl font-bold drop-shadow-md">
-                Educación que{" "}
-                <span className="text-[rgb(230,0,126)]">Transforma</span>{" "}
-                <span className="text-[rgb(0,200,150)]">Vidas</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+              {/* 🏫 Texto en 3 líneas alineado a la izquierda */}
+              <h3 className="absolute bottom-8 left-8 text-white text-4xl md:text-5xl font-bold leading-tight drop-shadow-lg text-left">
+                <span className="block">Aprendizaje</span>
+                <span className="block text-[rgb(230,0,126)]">que deja</span>
+                <span className="block text-[rgb(0,200,150)]">huella</span>
               </h3>
             </div>
           </div>
 
-          {/* Texto */}
+          {/* 🧠 Texto descriptivo */}
           <div
             className={`space-y-6 ${
               isVisible ? "animate-slide-in-right" : "opacity-0"
@@ -81,20 +83,20 @@ const About = () => {
               </p>
 
               <p>
-                Nos caracteriza una{" "}
+                Nos caracteriza la{" "}
                 <span className="font-semibold text-[rgb(0,200,150)]">
                   excelencia académica bilingüe
                 </span>{" "}
                 respaldada por{" "}
                 <span className="font-semibold text-[rgb(230,0,126)]">
-                  valores firmes
+                  valores y principios firmes
                 </span>{" "}
-                y un ambiente acogedor que fomenta la curiosidad y el pensamiento
-                crítico.
+                en un ambiente acogedor que fomenta la enseñanza-aprendizaje,
+                promoviendo la curiosidad y el pensamiento crítico.
               </p>
             </div>
 
-            {/* Valores */}
+            {/* 💡 Valores institucionales */}
             <div className="grid sm:grid-cols-2 gap-6 pt-4">
               {values.map((value, index) => (
                 <div

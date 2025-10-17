@@ -1,3 +1,4 @@
+import contactImage from "@/assets/BBL_5716.jpg"; 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -7,6 +8,7 @@ import {
   Facebook,
   MessageCircle,
   ExternalLink,
+  Instagram,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -61,22 +63,27 @@ const Contact = () => {
       className="section-padding bg-white relative overflow-hidden"
     >
       <div className="container-custom relative z-10">
-        {/* Encabezado */}
+        {/* 🔹 Encabezado */}
         <div
           className={`text-center mb-12 ${
             isVisible ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[rgb(230,0,126)]">
-            ¿Listo para Comenzar?
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-[rgb(230,0,126)] drop-shadow-md">
+            Comencemos!!!
           </h2>
+
           <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            Contáctanos para conocer más sobre nuestra oferta educativa y el
-            proceso de admisión.
+            <span className="block">
+              Contáctanos para conocer más sobre nuestra oferta educativa
+            </span>
+            <span className="block">
+              y el proceso de admisión.
+            </span>
           </p>
         </div>
 
-        {/* Tarjetas de contacto */}
+        {/* 🔹 Tarjetas */}
         <div
           className={`grid md:grid-cols-3 gap-6 mb-12 ${
             isVisible ? "animate-fade-in" : "opacity-0"
@@ -86,7 +93,7 @@ const Contact = () => {
           {contactInfo.map((info, i) => (
             <Card
               key={i}
-              className="border border-gray-200 bg-white shadow-sm hover:shadow-md hover:border-[rgb(230,0,126)]/40 rounded-2xl transition-all duration-300"
+              className="border border-gray-200 bg-white/95 shadow-sm hover:shadow-md hover:border-[rgb(230,0,126)]/40 rounded-2xl transition-all duration-300"
             >
               <CardContent className="pt-6 text-center flex flex-col items-center justify-center">
                 <div className="w-14 h-14 rounded-full bg-[rgb(59,130,246)]/10 flex items-center justify-center mb-4">
@@ -103,9 +110,9 @@ const Contact = () => {
           ))}
         </div>
 
-        {/* Botones */}
+        {/* 🔹 Botones */}
         <div
-          className={`flex flex-col sm:flex-row items-center justify-center gap-4 ${
+          className={`flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 ${
             isVisible ? "animate-fade-in-up" : "opacity-0"
           }`}
           style={{ animationDelay: "0.2s" }}
@@ -136,14 +143,24 @@ const Contact = () => {
             Facebook
           </Button>
 
+          {/* Instagram */}
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={() =>
+              window.open("https://www.instagram.com/oxford_coban/", "_blank")
+            }
+            className="w-full sm:w-auto border-[#E1306C] text-[#E1306C] hover:bg-[#E1306C] hover:text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            <Instagram className="mr-2" size={20} />
+            Instagram
+          </Button>
+
           {/* Plataforma */}
           <Button
             size="lg"
             onClick={() =>
-              window.open(
-                "https://colegiooxford.edu.gt/admin/login",
-                "_blank"
-              )
+              window.open("https://colegiooxford.edu.gt/admin/login", "_blank")
             }
             className="w-full sm:w-auto bg-[rgb(255,150,0)] hover:bg-[rgb(230,120,0)] text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300"
           >
@@ -152,7 +169,7 @@ const Contact = () => {
           </Button>
         </div>
 
-        {/* Horario */}
+        {/* 🔹 Horario */}
         <div
           className={`mt-14 p-6 md:p-8 rounded-2xl bg-white border border-[rgb(255,150,0)] shadow-sm hover:shadow-md transition-all duration-300 text-center max-w-xl mx-auto ${
             isVisible ? "animate-scale-in" : "opacity-0"
@@ -163,6 +180,22 @@ const Contact = () => {
             Horario de Atención
           </h3>
           <p className="text-gray-700">Lunes a Viernes: 7:00 AM - 2:00 PM</p>
+        </div>
+
+        {/* 👦 Foto del niño */}
+        <div
+          className={`mt-16 flex justify-center ${
+            isVisible ? "animate-fade-in-up" : "opacity-0"
+          }`}
+          style={{ animationDelay: "0.4s" }}
+        >
+          <div className="rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+            <img
+              src={contactImage}
+              alt="Estudiante Oxford con folder"
+              className="w-[350px] md:w-[420px] h-auto object-cover transform hover:scale-[1.03] transition-transform duration-500"
+            />
+          </div>
         </div>
       </div>
     </section>

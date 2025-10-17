@@ -113,8 +113,8 @@ const Grades = () => {
           {/* Texto visible sobre la imagen */}
           <h3 className="absolute bottom-8 left-8 text-white text-3xl md:text-4xl font-bold leading-snug drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)]">
             Educación que{" "}
-            <span className="text-[rgb(230,0,126)]">Transforma</span>{" "}
-            <span className="text-[rgb(0,200,150)]">Vidas</span>
+            <span className="text-[rgb(230,0,126)]">despierta</span>{" "}
+            <span className="text-[rgb(0,200,150)]">potencial.</span>
           </h3>
         </div>
       </div>
